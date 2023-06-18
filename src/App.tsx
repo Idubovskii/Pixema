@@ -1,5 +1,13 @@
 import './App.styles.css';
+import { Button } from './shared/ui/Button/Button';
 
 export const App = () => {
-  return <h1>Getting started</h1>;
+  return (
+    <Button
+      text="Primary"
+      onClick={() => {
+        console.warn('Primary');
+      }}
+    />
+  );
 };

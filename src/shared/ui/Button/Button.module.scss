@@ -1,0 +1,47 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 16px 32px;
+  border-radius: 2px;
+
+  &:disabled {
+    background-color: var(--tms-background-light-color);
+    color: var(--tms-background-color);
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: var(--tms-primary-color);
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: var(--tms-primary-2-color);
+  }
+}
+
+.secondary {
+  background-color: var(--tms-background-light-color);
+  color: var(--tms-secondary-color);
+
+  &:hover:not(:disabled) {
+    background-color: var(--tms-background-medium-color);
+  }
+}
+
+.secondary2 {
+  color: var(--tms-error-color);
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--tms-background-medium-color);
+  }
+
+  &:disabled {
+    background-color: transparent;
+  }
+}
