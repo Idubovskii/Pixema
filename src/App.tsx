@@ -1,13 +1,6 @@
-import './App.styles.css';
-import { Button } from './shared/ui/Button/Button';
+import './styles/app.scss';
+import '@fontsource/exo-2';
 
 export const App = () => {
-  return (
-    <Button
-      text="Primary"
-      onClick={() => {
-        console.warn('Primary');
-      }}
-    />
-  );
+  return <Router />;
 };
