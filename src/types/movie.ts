@@ -58,8 +58,8 @@ interface IMovieBudget {
 }
 
 interface IMovieFees {
-  usa: any;
-  world: any;
+  usa: { value: number };
+  world: { value: number };
 }
 
 interface IMoviePremiere {
@@ -148,7 +148,7 @@ export interface IMovie {
   shortDescription?: string;
   similarMovies?: IMovieSimilar[];
   general?: boolean;
-  slogan?: any;
+  slogan?: string;
   spokenLanguages?: any[];
   technology?: IMovieTechnology;
   ticketsOnSale?: boolean;

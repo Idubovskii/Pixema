@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.settings_container {
+    max-width: 1310px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 0;
+
+    .errors {
+        color: $error-color;
+        margin-bottom: 5px;
+    }
+
+    .success {
+        color: $green-color
+    }
+
+    h2 {
+        color: $white-color;
+        margin-bottom: 15px;
+    }
+
+ 

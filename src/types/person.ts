@@ -23,7 +23,7 @@ export interface IPerson {
   birthday: Date;
   countAwards: number;
   createdAt: Date;
-  death?: any;
+  death?: string;
   deathPlace: any[];
   enName: string;
   facts: IFact[];
