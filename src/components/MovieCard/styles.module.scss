@@ -1,0 +1,108 @@
+@import '../../styles/variables.scss';
+
+.movie_card {
+    width: 266px;
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    cursor: pointer;
+
+    @media (max-width: 1720px) {
+        width: 208px;
+    }
+
+    @media (max-width: 660px) {
+        width: 272px;
+    }
+
+    .movie_makers {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+        height: 70px;
+        position: absolute;
+        width: 100%;
+        z-index: 499;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover h2 {
+        color: $primary-color
+    }
+
+    &:hover {
+        &:after {
+            background-color: rgba($background-black, 0.2);
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-radius: 20px;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 358px;
+        background-color: rgba($background-black, 0);
+        transition: 0.3s ;
+
+        @media (max-width: 1720px) {
+            height: 279px;
+        }
+
+        @media (max-width: 660px) {
+            height: 357px;
+        }
+    }
+
+    .movie_poster {
+        height: 357px;
+        padding: 20px;
+        border-radius: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: 0.3s ;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media (max-width: 1720px) {
+            height: 279px;
+        }
+
+        @media (max-width: 660px) {
+            height: 357px;
+        }
+    }
+
+    .movie_description {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 16px;
+            color: $white-color;
+            font-weight: 700;
+            line-height: 24px;
+            transition: 0.3s ;
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.light {
+
+    h2,
+    p {
+        color: $background-black !important
+    }
+}

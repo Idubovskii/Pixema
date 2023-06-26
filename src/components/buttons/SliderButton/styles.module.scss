@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+
+.arrow {
+    outline: 0;
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    svg path {
+        transition: 0.3s;
+    }
+
+    &:hover svg path {
+        stroke: $light-color;
+    }
+}
+
+.left_arrow {
+    transform: scale(-1, 1);
+}

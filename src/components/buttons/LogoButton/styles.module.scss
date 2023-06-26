@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+
+.logo_button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    z-index: 1001;
+    transition: 0.5s;
+
+    path {
+        transition: 0.5s;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.light {
+    path:nth-child(n+4) {
+        fill: $background-black;
+    }
+}

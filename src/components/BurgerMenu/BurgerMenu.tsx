@@ -1,0 +1,45 @@
+import { Link, useLocation } from 'react-router-dom';
+
+import styles from './styles.module.scss';
+import { FavoritesSvg } from '../../assets/svg/FavoritesSvg';
+import { HomeSvg } from '../../assets/svg/HomeSvg';
+import { SettingSvg } from '../../assets/svg/SettingSvg';
+import { pathnames } from '../../constants/constants';
+
+export const BurgerMenu = () => {
+  const location = useLocation();
+
+  return (
+    <div
+      className={
+        boolean
+          ? `${styles.burger_menu} ${styles.active}`
+          : `${styles.burger_menu}`
+      }
+    >
+      {pathnames.map((path) => (
+        <Link
+          className={
+            (location.pathname === `/${path.value}`
+              ? `${styles.active_link}`
+              : '') ||
+            (location.pathname === `/` && path.value === 'home'
+              ? `${styles.active_link}`
+              : '')
+          }
+          key={path.value}
+          to={path.value === 'home' ? '/' : `${path.value}`}
+        >
+          {path.value === 'home' ? (
+            <HomeSvg />
+          ) : undefined || path.value === 'favorites' ? (
+            <FavoritesSvg />
+          ) : undefined || path.value === 'settings' ? (
+            <SettingSvg />
+          ) : undefined}
+          <p>{path.label}</p>
+        </Link>
+      ))}
+    </div>
+  );
+};

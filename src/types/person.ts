@@ -8,7 +8,7 @@ interface IPersonSpouse {
   _id: string;
   id: number;
   name: string;
-  divorced: boolean;
+  hasDivorced: boolean;
   divorcedReason: string;
   children: number;
   relation: string;
@@ -17,14 +17,14 @@ interface IPersonSpouse {
 export interface IPerson {
   spouses: IPersonSpouse[];
   id: number;
-  __v: number;
+  _v: number;
   age: number;
-  birthPlace: any[];
+  birthPlace: string[];
   birthday: Date;
   countAwards: number;
   createdAt: Date;
   death?: string;
-  deathPlace: any[];
+  deathPlace: string[];
   enName: string;
   facts: IFact[];
   growth: number;

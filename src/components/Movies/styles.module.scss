@@ -1,0 +1,81 @@
+@import '../../styles/variables.scss';
+
+.movies_container {
+    padding: 0 20px;
+
+    @media (max-width: 1760px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media (max-width: 660px) {
+        padding: 0px;
+    }
+
+    h1 {
+        color: $white-color;
+        padding-top: 20px;
+        padding-left: 20px;
+        display: flex;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    .movies_block {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 50px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    .movies_footer {
+        height: 56px;
+        margin-top: 50px;
+        display: flex;
+
+        button {
+            border: none;
+            max-width: 266px;
+            min-width: 266px;
+            border-radius: 10px;
+            height: 56px;
+            font-size: 18px;
+            padding: 16px 73px;
+            font-weight: 600;
+            white-space: nowrap;
+            line-height: 24px;
+            outline: none;
+            color: $white-color;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: $primary-color;
+            margin: 0 auto;
+
+            @media (max-width:768px) {
+                min-width: auto;
+                padding: 0px;
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: $primary-color-2;
+                transform: perspective(100px) translateZ(3px);
+            }
+
+        }
+    }
+}
+
+.light {
+    h1 {
+        color: $background-black !important
+    }
+}

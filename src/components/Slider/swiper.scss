@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.swiper-wrapper {
+    display: flex;
+    position: relative;
+    gap: 40px;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+
+    .swiper-slide {
+        max-width: 266px;
+        margin: 0 !important;
+        width: 100% !important;
+
+        @media (max-width: 1720px) {
+            max-width: 208px;
+        }
+
+        @media (max-width: 600px) {
+            max-width: 272px;
+        }
+    }
+}
+
+h2 {
+    color: $white-color;
+}
+
+.swiper-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}

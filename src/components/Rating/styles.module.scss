@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.rating {
+    font-size: 18px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    max-width: 40px;
+    max-height: 28px;
+    height: 100%;
+    width: 100%;
+    color: $white-color;
+    z-index: 33;
+    position: relative;
+    background-color: $yellow-color;
+    border-radius: 6px;
+    pointer-events: none;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.rating_green {
+    background-color: $green-color;
+}
+
+.rating_red {
+    background-color: $orange-color
+}

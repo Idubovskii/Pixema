@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.dropdown_container {
+    background: $background-dark;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .7);
+    display: inline-flex;
+    flex-direction: column;
+    height: 0;
+    justify-content: center;
+    margin-top: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: .3s ;
+    width: 267px;
+    align-items: baseline;
+    z-index: 9999;
+
+    @media (max-width: 1064px) {
+        position: absolute;
+        right: 0;
+    }
+
+    hr {
+        width: 100%;
+        border: 1px solid $background-graphite
+    }
+
+    button {
+        border: 0;
+        padding: 15px 20px;
+        background: none;
+        cursor: pointer;
+        color: $white-color;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+
+        &:hover {
+            color: $primary-color
+        }
+    }
+}
+
+.active {
+    border: 2px solid transparent;
+    height: 112px;
+    transition: 0.3s;
+}

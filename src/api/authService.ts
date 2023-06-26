@@ -1,7 +1,7 @@
-interface TokenResponse {
+export interface TokenResponse {
   isOk: boolean;
   status: number;
-  data: TokenResponse;
+  data: { access: string; refresh: string };
 }
 export const getTokensUser = async (
   email: string,
@@ -21,7 +21,7 @@ export const getTokensUser = async (
 
   const request = new Request(url, parameters);
   const response = await fetch(request);
-  const result = (await response.json()) as TokenResponse;
+  const result = (await response.json()) as { access: string; refresh: string };
 
   return {
     isOk: response.ok,

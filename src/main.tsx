@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import { App } from '~/App';
 
+import { store } from './store/store';
 import './styles/main.scss';
 
 const container = document.querySelector('#root');

@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+.favbutton {
+    border: 0;
+    font-size: 18px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    max-width: 40px;
+    max-height: 28px;
+    height: 100%;
+    width: 100%;
+    color: $white-color;
+    z-index: 33;
+    position: relative;
+    background-color: $primary-color;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.active {
+    background: $primary-color;
+    transition: 0.3s;
+
+    &:hover {
+        background: $primary-color-2;
+    }
+}

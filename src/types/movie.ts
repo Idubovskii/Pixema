@@ -10,7 +10,7 @@ export interface IMoviePoster {
 }
 
 export interface IFact {
-  spoiler: boolean;
+  hasSpoiler: boolean;
   type: string;
   value: string;
 }
@@ -40,7 +40,7 @@ export interface IMovieTrailer {
 
 export interface IMovieVideos {
   trailers: IMovieTrailer[];
-  teasers: any[];
+  teasers: string[];
 }
 
 export interface IMovieRating {
@@ -127,37 +127,37 @@ export interface IMovie {
   budget?: IMovieBudget;
   fees?: IMovieFees;
   premiere?: IMoviePremiere;
-  collections?: any[];
-  updateDates?: any[];
+  collections?: string[];
+  updateDates?: string[];
   id?: number;
-  alternativeName?: any;
+  alternativeName?: string;
   countries?: IMovieCountry[];
   createdAt?: Date;
   description?: string;
-  enName?: any;
+  enName?: string;
   facts?: IFact[];
   genres?: IMovieGenre[];
   movieLength?: number;
   name?: string;
   names?: IMovieName[];
   persons?: IMoviePerson[];
-  productionCompanies?: any[];
-  ratingMpaa?: any;
+  productionCompanies?: string[];
+  ratingMpaa?: string;
   seasonsInfo?: IMovieSeasonsInfo[];
   sequelsAndPrequels?: IMovie[];
   shortDescription?: string;
   similarMovies?: IMovieSimilar[];
-  general?: boolean;
+  isGeneral?: boolean;
   slogan?: string;
-  spokenLanguages?: any[];
+  spokenLanguages?: string[];
   technology?: IMovieTechnology;
-  ticketsOnSale?: boolean;
+  isTicketsOnSale?: boolean;
   type?: string;
   typeNumber?: number;
   updatedAt?: Date;
   year?: number;
   imagesInfo?: IMovieImagesInfo;
   ageRating?: number;
-  lists?: any[];
+  lists?: string[];
   createDate?: Date;
 }

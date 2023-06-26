@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.tabs_layout {
+    padding: 50px 0;
+    border-bottom: 1px solid $background-graphite;
+    padding-bottom: 50px;
+    max-width: 1920px;
+
+    &__title-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+}
