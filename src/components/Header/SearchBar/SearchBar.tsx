@@ -1,12 +1,15 @@
 import { useState } from 'react';
 
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.scss';
-import { FilterButton } from '../../buttons/FilterButton/FilterButton';
-import { SearchButton } from '../../buttons/SearchButton/SearchButton';
+import { FilterButton } from '../../../shared/ui/buttons/FilterButton/FilterButton';
+import { SearchButton } from '../../../shared/ui/buttons/SearchButton/SearchButton';
+import { changeThemeSelector } from '../../../store/selectors/selectors';
 
 export const SearchBar = () => {
+  const hasTheme = useSelector(changeThemeSelector);
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState('');
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {

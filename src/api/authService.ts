@@ -1,3 +1,5 @@
+import { STUD_API_URL } from '~/constants/constants';
+
 export interface TokenResponse {
   isOk: boolean;
   status: number;
@@ -7,7 +9,7 @@ export const getTokensUser = async (
   email: string,
   password: string
 ): Promise<TokenResponse> => {
-  const url = 'https://studapi.teachmeskills.by/auth/jwt/create/';
+  const url = `${STUD_API_URL}auth/jwt/create/`;
   const parameters = {
     method: 'POST',
     headers: {

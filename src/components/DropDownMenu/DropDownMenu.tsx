@@ -1,6 +1,8 @@
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.scss';
+import { signOutAction } from '../../store/reducers/auth/actions';
 
 interface IProperties {
   isActive: boolean;
@@ -9,6 +11,10 @@ interface IProperties {
 export const DropDownMenu = (properties: IProperties) => {
   const { isActive } = properties;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleLogOut = () => {
+    dispatch(signOutAction());
+  };
 
   return (
     <div
@@ -25,6 +31,8 @@ export const DropDownMenu = (properties: IProperties) => {
       >
         Изменить профиль
       </button>
+      <hr />
+      <button onClick={handleLogOut}>Выход</button>
     </div>
   );
 };

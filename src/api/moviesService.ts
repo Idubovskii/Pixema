@@ -1,7 +1,7 @@
-import { API_KEY } from '../constants/constants';
+import { API_KEY, KINO_API_URL } from '../constants/constants';
 
 export const moviesResponse = (limit: number) => {
-  const URL = `https://api.kinopoisk.dev/v1/movie?page=1&limit=${limit}&year=2022-2023`;
+  const URL = `${KINO_API_URL}movie?page=1&limit=${limit}&year=2022-2023`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -19,7 +19,7 @@ export const moviesResponseById = (
     throw new Error('Invalid id');
   }
 
-  const URL = `https://api.kinopoisk.dev/v1/movie/${id}`;
+  const URL = `${KINO_API_URL}movie/${id}`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -34,9 +34,7 @@ export const moviesPersonResponseById = (
   limit: number,
   query: string | undefined
 ): Promise<unknown> => {
-  const URL = `https://api.kinopoisk.dev/v1/movie${
-    query ? `?${query}` : ''
-  }&limit=${limit}`;
+  const URL = `${KINO_API_URL}movie${query ? `?${query}` : ''}&limit=${limit}`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -52,7 +50,7 @@ export const personResponseById = (
   if (!id) {
     throw new Error('Invalid id');
   }
-  const URL = `https://api.kinopoisk.dev/v1/person/${id}`;
+  const URL = `${KINO_API_URL}person/${id}`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -70,7 +68,7 @@ export const moviesResponseBySearch = (
   if (!query) {
     throw new Error('Query parameter is undefined');
   }
-  const URL = `https://api.kinopoisk.dev/v1/movie?${query}&limit=${limit}`;
+  const URL = `${KINO_API_URL}movie?${query}&limit=${limit}`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -82,7 +80,7 @@ export const moviesResponseBySearch = (
 };
 
 export const randomMovie = () => {
-  const URL = 'https://api.kinopoisk.dev/v1/movie/random';
+  const URL = `${KINO_API_URL}movie/random`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {
@@ -94,7 +92,7 @@ export const randomMovie = () => {
 };
 
 export const movieFilter = (query: string, limit: number): Promise<unknown> => {
-  const URL = `https://api.kinopoisk.dev/v1/movie?${query}&limit=${limit}`;
+  const URL = `${KINO_API_URL}movie?${query}&limit=${limit}`;
   const request = new Request(URL, {
     method: 'GET',
     headers: {

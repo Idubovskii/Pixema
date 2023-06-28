@@ -10,4 +10,64 @@
         padding-left: 20px;
     }
 
- 
+    .movies_block {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 50px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    .movies_footer {
+        height: 56px;
+        margin-top: 50px;
+        display: flex;
+
+        button {
+            border: none;
+            max-width: 266px;
+            min-width: 266px;
+            border-radius: 10px;
+            height: 56px;
+            font-size: 18px;
+            padding: 16px 73px;
+            font-weight: 600;
+            white-space: nowrap;
+            line-height: 24px;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: $primary-color;
+            margin: 0 auto;
+
+            &:hover {
+                background-color: $primary-color-2;
+                transform: perspective(100px) translateZ(3px);
+            }
+
+        }
+    }
+
+    .favorites_null {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 100px;
+
+    }
+}
+
+
+.light {
+
+    h1,
+    h2 {
+        color: $background-black !important;
+    }
+}

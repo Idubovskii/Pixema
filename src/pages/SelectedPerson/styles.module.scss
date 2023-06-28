@@ -5,4 +5,152 @@
     margin: 0 auto;
     padding-top: 20px;
 
- 
+    .content {
+        display: flex;
+
+        @media (max-width:880px) {
+            flex-direction: column;
+        }
+    }
+
+    .left_container {
+        display: flex;
+        flex-direction: column;
+        max-width: 276px;
+        width: 100%;
+        gap: 32px;
+
+        h1,
+        h2 {
+            margin: 5px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .genres_container {
+            display: flex;
+
+        }
+
+        .movie_name {
+            color: $white-color
+        }
+
+        .movie_altname {
+            color: $light-color
+        }
+
+        .movie_markers {
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (max-width:880px) {
+            max-width: none;
+        }
+
+        .img_container {
+            img {
+                height: 400px;
+                width: 100%;
+                border-radius: 20px;
+
+                @media (max-width:880px) {
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+
+    .top_container {
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+
+        h1,
+        h2 {
+            margin: 5px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .genres_container {
+            display: flex;
+
+        }
+
+        .movie_name {
+            color: $white-color
+        }
+
+        .movie_altname {
+            color: $light-color
+        }
+
+        .movie_markers {
+            display: flex;
+            gap: 20px;
+        }
+
+        .info_container {
+            .movie_description {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                max-width: 900px;
+                padding-top: 40px;
+                color: $white-color;
+            }
+
+            .column_description {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-top: 40px;
+
+                .column_description_block {
+                    display: flex;
+
+                    .column_title {
+                        color: $light-color;
+                        margin: 0;
+                        min-width: 180px;
+                    }
+
+                    .column_description_content {
+                        margin: 0;
+                        max-width: 1100px;
+                        color: $white-color;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        p:not(:last-child)::after {
+                            content: ', ';
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom_container {
+        margin-top: 20px;
+    }
+}
+
+.light {
+
+    p,
+    h2,
+    h3,
+    h1,
+    li {
+        color: $background-black !important
+    }
+}

@@ -1,3 +1,5 @@
+import { STUD_API_URL } from '~/constants/constants';
+
 interface ResponseUsers {
   username: string;
   email: string;
@@ -13,7 +15,7 @@ export const registerUser = async (
   email: string,
   password: string
 ) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/';
+  const url = `${STUD_API_URL}auth/users/`;
   const parameters = {
     method: 'POST',
     headers: {
@@ -40,7 +42,7 @@ export const activateUser = async (
   uid: string,
   token: string
 ): Promise<{ isOk: boolean; status: number; data: UserActivation }> => {
-  const url = ' https://studapi.teachmeskills.by/auth/users/activation/';
+  const url = `${STUD_API_URL}auth/users/activation/`;
   const parameters = {
     method: 'POST',
     headers: {

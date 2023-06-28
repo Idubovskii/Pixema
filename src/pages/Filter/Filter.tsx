@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './styles.module.scss';
-import { MovieCard } from '../../components/MovieCard';
+import { MovieCard } from '../../components/MovieCard/MovieCard';
 import { movieTypes } from '../../constants/constants';
 import { loadMoviesByfilterAsyncAction } from '../../store/reducers/movies/actions';
 import {

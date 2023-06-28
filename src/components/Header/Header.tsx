@@ -3,10 +3,10 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { SearchBar } from './SearchBar/SearchBar';
 import styles from './styles.module.scss';
+import { BurgerButton } from '../../shared/ui/buttons/BurgerButton/BurgerButton';
+import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
+import { UserButton } from '../../shared/ui/buttons/UserButton/UserButton';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { BurgerButton } from '../buttons/BurgerButton/BurgerButton';
-import { LogoButton } from '../buttons/LogoButton/LogoButton';
-import { UserButton } from '../buttons/UserButton/UserButton';
 import { ModalFilter } from '../ModalFilter/ModalFilter';
 
 export const Header = () => {

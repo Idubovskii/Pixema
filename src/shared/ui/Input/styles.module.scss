@@ -1,0 +1,39 @@
+@import '../../../styles/variables.scss';
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-size: 16px;
+    color: $white-color;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .input {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: $background-graphite;
+    color: $white-color;
+    margin-bottom: 20px;
+    outline: 0;
+    padding: 16px 32px;
+  }
+
+  .input:focus {
+    outline: 3px solid $primary-color;
+  }
+}
+
+.light {
+  .label {
+    color: $background-black;
+  }
+
+  .input {
+    background: $white-color;
+    color: $background-black;
+    border: 2px solid $light-color;
+  }
+}

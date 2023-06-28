@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
 import styles from './styles.module.scss';
@@ -5,14 +6,16 @@ import { FavoritesSvg } from '../../assets/svg/FavoritesSvg';
 import { HomeSvg } from '../../assets/svg/HomeSvg';
 import { SettingSvg } from '../../assets/svg/SettingSvg';
 import { pathnames } from '../../constants/constants';
+import { toggleBurgerSelector } from '../../store/selectors/selectors';
 
 export const BurgerMenu = () => {
   const location = useLocation();
+  const isToggleBurger = useSelector(toggleBurgerSelector);
 
   return (
     <div
       className={
-        boolean
+        isToggleBurger
           ? `${styles.burger_menu} ${styles.active}`
           : `${styles.burger_menu}`
       }

@@ -1,13 +1,25 @@
 import { useEffect, useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import styles from './styles.module.scss';
 import { LazyLoaderSvg } from '../../assets/svg/LazyLoaderSvg';
-
+import { loadMoviesAsyncAction } from '../../store/reducers/movies/actions';
+import {
+  changeThemeSelector,
+  moviesSelector
+} from '../../store/selectors/selectors';
 import { MovieCard } from '../MovieCard/MovieCard';
 
 export const Movies = () => {
+  const dispatch = useDispatch();
+  const hasTheme = useSelector(changeThemeSelector);
+  const movies = useSelector(moviesSelector);
   const [limit, setLimit] = useState(10);
   const [count, setCount] = useState(10);
+  useEffect(() => {
+    dispatch(loadMoviesAsyncAction(limit));
+  }, [limit, dispatch]);
   useEffect(() => {
     if (
       document.documentElement.clientWidth <= 1366 &&

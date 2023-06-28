@@ -1,4 +1,6 @@
-export const API_KEY = 'NBZJY6T-M0F4JZH-QBY3TDZ-2T3VXR5';
+export const API_KEY = 'CNXS5KP-JVRM8KQ-MQWNPS5-7S79V3K';
+export const STUD_API_URL = import.meta.env.VITE_API_URL as string;
+export const KINO_API_URL = import.meta.env.VITE_APIKINO_URL as string;
 
 export const pathnames = [
   { label: 'Главная', value: 'home' },

@@ -1,0 +1,149 @@
+@import '../../styles/variables.scss';
+
+.background_image_container {
+  width: 100%;
+  height: 750px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -140px;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+
+  @media (max-width: 768px) {
+    top: -20px;
+    background-position: center;
+  }
+
+  .container_container {
+    position: absolute;
+    top: -200px;
+    height: 1000px;
+    width: 100%;
+    z-index: 46;
+    background-color: rgba($color: $background-black, $alpha: 0.5);
+  }
+}
+
+.background_info {
+  max-width: 1920px;
+  width: 100%;
+  padding-left: 147px;
+  height: 600px;
+  display: flex;
+  position: relative;
+  padding-top: 100px;
+  z-index: 10;
+  flex-direction: column;
+
+  h1 {
+    color: $white-color;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  @media (max-width: 1760px) {
+    padding-left: 118px;
+    padding-right: 118px;
+  }
+
+  @media (max-width: 1730px) {
+    padding-left: 176px;
+    padding-right: 176px;
+  }
+
+  @media (max-width: 1540px) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  @media (max-width: 1440px) {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  @media (max-width: 1200px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 1090px) {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (max-width: 848px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 50px;
+  }
+
+  .background_description_block {
+    display: flex;
+    color: $secondary-color;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 360px) {
+      width: 360px;
+    }
+  }
+
+  .background_description {
+    padding-top: 20px;
+    color: $white-color;
+    font-size: 18px;
+    width: 55%;
+    line-height: 24px;
+    max-height: 184px;
+    overflow: hidden;
+
+    @media (max-width: 1520px) {
+      width: 100%;
+    }
+
+    @media (max-width: 360px) {
+      width: 360px;
+    }
+  }
+
+  .background_buttons {
+    height: 56px;
+    margin-top: 50px;
+    display: flex;
+
+    a {
+      text-decoration: none;
+      max-width: 266px;
+      border-radius: 10px;
+      height: 56px;
+      padding: 16px 69px;
+      font-weight: 600;
+      line-height: 24px;
+      color: $white-color;
+      cursor: pointer;
+      transition: 0.3s;
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: $primary-color-2;
+        transform: perspective(100px) translateZ(3px);
+      }
+    }
+  }
+}

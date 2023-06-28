@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { Movies } from '../../components/Movies';
+import { Movies } from '../../components/Movies/Movies';
 
 export const Main = () => {
   return (

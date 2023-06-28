@@ -4,4 +4,152 @@
     max-width: 1610px;
     margin: 0 auto;
 
- 
+    h1 {
+        color: $white-color;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .movies_block {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 50px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    .movies_buttons {
+        margin-top: 20px;
+        display: flex;
+        height: 56px;
+        justify-content: space-between;
+        max-width: 360px;
+
+        button {
+            width: 170px;
+            height: 50px;
+            background: $background-graphite;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+            border: 0px;
+            align-items: center;
+            font-size: 16px;
+            display: flex;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            justify-content: center;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        ul {
+            width: 170px;
+            height: 50px;
+            background: #323537;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+
+            label {
+                align-self: center;
+                align-items: center;
+                font-size: 16px;
+                display: flex;
+                padding: 15px;
+                color: $white-color;
+                cursor: pointer;
+                width: 100%;
+                justify-content: center;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: $primary-color;
+                    border-radius: 10px;
+                }
+            }
+
+            .ulgenre {
+                display: none;
+                opacity: 0;
+                pointer-events: none;
+                font-size: 18px;
+                color: $white-color;
+                cursor: pointer;
+                transition: 0.3s;
+                padding: 10px;
+                align-self: center;
+                width: 100%;
+                border-bottom: 1px solid $secondary-color;
+            }
+
+            .active {
+                background: $primary-color;
+                color: $white-color
+            }
+        }
+
+        .active_ul {
+            overflow: hidden;
+            height: 306px;
+            z-index: 9999;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    .movies_footer {
+        height: 56px;
+        margin-top: 50px;
+        display: flex;
+
+        button {
+            border: none;
+            max-width: 266px;
+            min-width: 266px;
+            border-radius: 10px;
+            height: 56px;
+            font-size: 18px;
+            padding: 16px 73px;
+            font-weight: 600;
+            white-space: nowrap;
+            line-height: 24px;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: $primary-color;
+            margin: 0 auto;
+
+            &:hover {
+                background-color: $primary-color-2;
+                transform: perspective(100px) translateZ(3px);
+            }
+        }
+    }
+}
+
+.notfound {
+    padding-top: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-color;
+}

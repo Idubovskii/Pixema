@@ -1,15 +1,21 @@
 import { useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { allGenres } from '../../constants/constants';
-
-import { CloseButton } from '../buttons/CloseButton/CloseButoon';
-import { Input } from '../Input/Input';
+import { CloseButton } from '../../shared/ui/buttons/CloseButton/CloseButoon';
+import { Input } from '../../shared/ui/Input/Input';
+import { filterAction } from '../../store/reducers/filter/actions';
+import { toggleFilterAction } from '../../store/reducers/toggleFilter/reducer';
+import { toggleFilterSelector } from '../../store/selectors/selectors';
 import { Submit } from '../Submit/Submit';
 
 export const ModalFilter = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const hasToggleFilter = useSelector(toggleFilterSelector);
   const [stateYearFrom, setStateYearFrom] = useState('1980');
   const [stateYearTo, setStateYearTo] = useState('2023');
   const [stateRatingFrom, setStateRatingFrom] = useState('1');
@@ -36,6 +42,28 @@ export const ModalFilter = () => {
   const changeValueRatingTo = (event: React.ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.currentTarget.value;
     setStateRatingTo(currentValue);
+  };
+  const handleClick = () => {
+    dispatch(
+      filterAction(
+        sortBy,
+        stateYearFrom,
+        stateYearTo,
+        stateRatingFrom,
+        stateRatingTo,
+        stateGenre
+      )
+    );
+    navigate('/filter');
+    dispatch(toggleFilterAction());
+  };
+
+  const resetClick = () => {
+    setStateYearFrom('1980');
+    setStateYearTo('2023');
+    setStateRatingFrom('1');
+    setStateRatingTo('10');
+    setStateGenre('');
   };
 
   document.body.style.overflow = hasToggleFilter ? 'hidden' : 'auto';

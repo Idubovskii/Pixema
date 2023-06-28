@@ -1,3 +1,5 @@
+import { STUD_API_URL } from '~/constants/constants';
+
 interface AuthUserResponse {
   username: string;
   id: number;
@@ -10,7 +12,7 @@ interface PatchEmailResponse {
 }
 
 export const getUser = async (token: string) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/me/';
+  const url = `${STUD_API_URL}auth/users/me/`;
   const parameters = {
     method: 'GET',
     headers: {
@@ -30,7 +32,7 @@ export const getUser = async (token: string) => {
 };
 
 export const patchUser = async (token: string, username: string) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/me/';
+  const url = `${STUD_API_URL}auth/users/me/`;
   const parameters = {
     method: 'PATCH',
     headers: {
@@ -57,7 +59,7 @@ export const patchEmail = async (
   password: string,
   email: string
 ) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/set_email/';
+  const url = `${STUD_API_URL}auth/users/set_email/`;
   const parameters = {
     method: 'POST',
     headers: {
@@ -85,7 +87,7 @@ export const patchPassword = async (
   currentPassword: string,
   newPassword: string
 ) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/set_password/';
+  const url = `${STUD_API_URL}auth/users/set_password/`;
   const parameters = {
     method: 'POST',
     headers: {
@@ -107,7 +109,7 @@ export const patchPassword = async (
 };
 
 export const fetchResetPassword = async (email: string) => {
-  const url = 'https://studapi.teachmeskills.by/auth/users/reset_password/';
+  const url = `${STUD_API_URL}auth/users/reset_password/`;
   const parameters = {
     method: 'POST',
     headers: {
@@ -131,8 +133,7 @@ export const fetchNewPassword = async (
   token: string,
   newPassword: string
 ) => {
-  const url =
-    'https://studapi.teachmeskills.by/auth/users/reset_password_confirm/';
+  const url = `${STUD_API_URL}auth/users/reset_password_confirm/`;
   const parameters = {
     method: 'POST',
     headers: {
@@ -154,7 +155,7 @@ export const fetchNewPassword = async (
 };
 
 export const fetchRefreshToken = async (refreshToken: string) => {
-  const url = 'https://studapi.teachmeskills.by/auth/jwt/refresh/';
+  const url = `${STUD_API_URL}auth/jwt/refresh/`;
   const parameters = {
     method: 'POST',
     headers: {

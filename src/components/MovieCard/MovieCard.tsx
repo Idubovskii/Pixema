@@ -1,13 +1,19 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
-
+import { SmallFavoriteButton } from '../../shared/ui/buttons/SmallFavoriteButton/SmallFavoriteButton';
+import {
+  changeThemeSelector,
+  favoritesMoviesSelector
+} from '../../store/selectors/selectors';
 import { type IMovieProperties } from '../../types/movie';
-import { SmallFavoriteButton } from '../buttons/SmallFavoriteButton/SmallFavoriteButton';
 import { Genres } from '../Genres/Genres';
 import { Rating } from '../Rating/Rating';
 
 export const MovieCard = ({ docs }: IMovieProperties) => {
+  const hasTheme = useSelector(changeThemeSelector);
+  const favoritemovies = useSelector(favoritesMoviesSelector);
   const isFavoritePost = (favoriteMoviesId: number | undefined) => {
     return favoritemovies.find((movie) => movie.id === favoriteMoviesId);
   };
