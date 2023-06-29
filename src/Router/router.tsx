@@ -27,12 +27,12 @@ const routerSchema = createBrowserRouter([
         element: <Main />
       },
       {
-        path: 'signin',
-        element: <SignIn />
-      },
-      {
         path: 'signup',
         element: <SignUp />
+      },
+      {
+        path: 'signin',
+        element: <SignIn />
       },
       {
         path: 'confirmation',
