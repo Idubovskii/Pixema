@@ -7,10 +7,10 @@ import styles from './styles.module.scss';
 import { allGenres } from '../../constants/constants';
 import { CloseButton } from '../../shared/ui/buttons/CloseButton/CloseButoon';
 import { Input } from '../../shared/ui/Input/Input';
+import { Submit } from '../../shared/ui/Submit/Submit';
 import { filterAction } from '../../store/reducers/filter/actions';
 import { toggleFilterAction } from '../../store/reducers/toggleFilter/reducer';
 import { toggleFilterSelector } from '../../store/selectors/selectors';
-import { Submit } from '../Submit/Submit';
 
 export const ModalFilter = () => {
   const dispatch = useDispatch();

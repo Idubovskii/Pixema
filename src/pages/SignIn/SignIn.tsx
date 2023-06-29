@@ -1,11 +1,3 @@
-
-
-
-
 export const SignIn = () => {
- 
-
-  return (
-    
-  );
+  return <div>Sign in...</div>;
 };

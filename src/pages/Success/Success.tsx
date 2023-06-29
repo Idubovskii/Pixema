@@ -1,9 +1,3 @@
-
-
 export const Success = () => {
-
-
-  return (
-  
-  );
+  return <div>Success..</div>;
 };

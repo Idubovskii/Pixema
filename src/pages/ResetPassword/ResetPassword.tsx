@@ -1,22 +1,3 @@
-
-interface FormData {
-  email: {
-    value: string;
-  };
-}
-const resetValidationSchema = {
-  email: { type: 'email' }
-};
-
-export const check = () => {
- 
-};
-
 export const ResetPassword = () => {
- 
-
-  return (
-   
-    </>
-  );
+  return <div>Reset pass...</div>;
 };
