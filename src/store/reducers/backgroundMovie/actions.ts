@@ -15,8 +15,6 @@ export const loadBackgroundMovieAction = (
 
 export const loadBackgroundMovieAsyncAction = (): any => {
   return (dispatch: GlobalDispatch) => [
-    randomMovie().then((movie: IMovie) =>
-      dispatch(loadBackgroundMovieAction(movie))
-    )
+    randomMovie().then((movie) => dispatch(loadBackgroundMovieAction(movie)))
   ];
 };

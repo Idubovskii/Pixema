@@ -17,8 +17,8 @@ export const loadMoviesAction = (movies: IData): IMoviesListAction => {
 };
 
 export const loadMoviesAsyncAction = (limit: number): any => {
-  return (dispatch: GlobalDispatch): any => {
-    void moviesResponse(limit).then((movies: IData) =>
+  return (dispatch: GlobalDispatch) => {
+    void moviesResponse(limit).then((movies) =>
       dispatch(loadMoviesAction(movies))
     );
   };
@@ -28,9 +28,9 @@ export const loadMoviesByIdAsyncAction = (
   limit: number,
   query: string
 ): any => {
-  return async (dispatch: GlobalDispatch): Promise<void> => {
+  return async (dispatch: GlobalDispatch) => {
     try {
-      const movies = (await moviesPersonResponseById(limit, query)) as IData;
+      const movies = await moviesPersonResponseById(limit, query);
       dispatch(loadMoviesAction(movies));
     } catch (error) {
       console.error(error);
@@ -42,10 +42,10 @@ export const loadMoviesBySearchAsyncAction = (
   limit: number,
   query: string | undefined
 ): any => {
-  return async (dispatch: GlobalDispatch): Promise<void> => {
+  return async (dispatch: GlobalDispatch) => {
     try {
       const movies = await moviesResponseBySearch(limit, query);
-      dispatch(loadMoviesAction(movies as IData));
+      dispatch(loadMoviesAction(movies));
     } catch (error) {
       console.error(error);
     }
@@ -56,10 +56,10 @@ export const loadMoviesByfilterAsyncAction = (
   query: string,
   limit: number
 ): any => {
-  return async (dispatch: GlobalDispatch): Promise<void> => {
+  return async (dispatch: GlobalDispatch) => {
     try {
       const movies = await movieFilter(query, limit);
-      dispatch(loadMoviesAction(movies as IData));
+      dispatch(loadMoviesAction(movies));
     } catch (error) {
       console.error(error);
     }

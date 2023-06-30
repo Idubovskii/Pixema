@@ -1,3 +1,7 @@
+import { type IData } from '~/types/data';
+import { type IMovie } from '~/types/movie';
+import { type IPerson } from '~/types/person';
+
 import { API_KEY, KINO_API_URL } from '../constants/constants';
 
 export const moviesResponse = (limit: number) => {
@@ -9,16 +13,13 @@ export const moviesResponse = (limit: number) => {
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IData>;
 };
 
-export const moviesResponseById = (
-  id: string | undefined
-): Promise<unknown> => {
+export const moviesResponseById = (id: string | undefined) => {
   if (!id) {
     throw new Error('Invalid id');
   }
-
   const URL = `${KINO_API_URL}movie/${id}`;
   const request = new Request(URL, {
     method: 'GET',
@@ -27,13 +28,13 @@ export const moviesResponseById = (
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IMovie>;
 };
 
 export const moviesPersonResponseById = (
   limit: number,
   query: string | undefined
-): Promise<unknown> => {
+) => {
   const URL = `${KINO_API_URL}movie${query ? `?${query}` : ''}&limit=${limit}`;
   const request = new Request(URL, {
     method: 'GET',
@@ -42,11 +43,10 @@ export const moviesPersonResponseById = (
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IData>;
 };
-export const personResponseById = (
-  id: string | undefined
-): Promise<unknown> => {
+
+export const personResponseById = (id: string | undefined) => {
   if (!id) {
     throw new Error('Invalid id');
   }
@@ -58,13 +58,13 @@ export const personResponseById = (
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IPerson>;
 };
 
 export const moviesResponseBySearch = (
   limit: number,
   query: string | undefined
-): Promise<unknown> => {
+) => {
   if (!query) {
     throw new Error('Query parameter is undefined');
   }
@@ -76,7 +76,7 @@ export const moviesResponseBySearch = (
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IData>;
 };
 
 export const randomMovie = () => {
@@ -88,10 +88,10 @@ export const randomMovie = () => {
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IMovie>;
 };
 
-export const movieFilter = (query: string, limit: number): Promise<unknown> => {
+export const movieFilter = (query: string, limit: number) => {
   const URL = `${KINO_API_URL}movie?${query}&limit=${limit}`;
   const request = new Request(URL, {
     method: 'GET',
@@ -100,5 +100,5 @@ export const movieFilter = (query: string, limit: number): Promise<unknown> => {
     }
   });
 
-  return fetch(request).then((response) => response.json());
+  return fetch(request).then((response) => response.json()) as Promise<IData>;
 };

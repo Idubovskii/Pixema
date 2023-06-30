@@ -16,7 +16,7 @@ interface IPersonSpouse {
 
 export interface IPerson {
   spouses: IPersonSpouse[];
-  id: number;
+  id: string;
   _v: number;
   age: number;
   birthPlace: string[];

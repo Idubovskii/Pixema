@@ -12,10 +12,10 @@ export const loadSelectedMovieAction = (movie: IMovie): SelectedMovieAction => {
 };
 
 export const loadSelectedMovieAsyncAction = (id: string | undefined): any => {
-  return async (dispatch: GlobalDispatch): Promise<void> => {
+  return async (dispatch: GlobalDispatch) => {
     try {
       const movie = await moviesResponseById(id);
-      dispatch(loadSelectedMovieAction(movie as IMovie));
+      dispatch(loadSelectedMovieAction(movie));
     } catch (error) {
       console.error(error);
     }

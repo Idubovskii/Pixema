@@ -17,7 +17,7 @@ export const loadSelectedPersonAsyncAction = (id: string | undefined): any => {
   return async (dispatch: GlobalDispatch): Promise<void> => {
     try {
       const person = await personResponseById(id);
-      dispatch(loadSelectedPersonAction(person as IPerson));
+      dispatch(loadSelectedPersonAction(person));
     } catch (error) {
       console.error(error);
     }
