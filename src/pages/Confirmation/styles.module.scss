@@ -4,3 +4,26 @@
   padding-left: 40px;
   padding-top: 40px;
 }
+
+.form_container {
+  max-width: 574px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 150px;
+  background: $background-dark;
+  border-radius: 10px;
+  padding: 40px;
+
+  p {
+    color: $white-color;
+    max-width: 378px;
+    margin-bottom: 20px;
+  }
+}
+
+.light {
+  p {
+    color: $background-black !important;
+  }
+}
