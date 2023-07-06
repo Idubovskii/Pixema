@@ -19,4 +19,156 @@
     color: $white-color;
     margin-bottom: 15px;
   }
+
+  .form_container {
+    transition: 0.5s all;
+    background: $background-dark;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 2px solid transparent;
+
+    .input_container {
+      width: 49%;
+    }
+
+    @media (max-width: 660px) {
+      flex-direction: column;
+
+      .input_container {
+        width: 100%;
+      }
+    }
+  }
+
+  .theme_container {
+    transition: 0.5s all;
+    align-items: center;
+    background: $background-dark;
+    padding: 40px 24px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 2px solid transparent;
+
+    p {
+      color: $white-color;
+
+      &:last-child {
+        color: $light-color;
+      }
+    }
+
+    .theme_toggle {
+      display: none;
+    }
+
+    label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      width: 32px;
+      height: 20px;
+      border-radius: 10px;
+      background: $light-color;
+      transition: 0.3s;
+
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        bottom: 1px;
+        content: '';
+      }
+
+      &:before {
+        right: 1px;
+        background: $light-color;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      &:after {
+        width: 16px;
+        height: 16px;
+        margin-top: 1px;
+        background: $white-color;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: margin 0.4s;
+      }
+    }
+
+    .theme_toggle_round:checked + label:before {
+      background: $primary-color;
+    }
+
+    .theme_toggle_round:checked + label {
+      background: $primary-color;
+      transition: 0.3s;
+    }
+
+    .theme_toggle_round:checked + label:after {
+      margin-left: 41%;
+    }
+  }
+
+  .settings_footer {
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    width: 100%;
+
+    button {
+      max-width: 266px;
+      width: 100%;
+      background: $background-graphite;
+      color: $white-color;
+      display: flex;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 16px 32px;
+      cursor: pointer;
+      border: 0px;
+      outline: 0px;
+      transition: 0.3s;
+
+      &:hover {
+        background: $background-dark;
+      }
+    }
+
+    input {
+      max-width: 266px;
+      width: 100%;
+    }
+  }
+}
+
+.light {
+  h2 {
+    color: $background-dark;
+  }
+
+  .form_container,
+  .theme_container {
+    background: $white-color;
+
+    border: 2px solid $light-color;
+
+    p {
+      color: $background-dark;
+    }
+  }
+}
+
+.disable {
+  display: none;
 }
