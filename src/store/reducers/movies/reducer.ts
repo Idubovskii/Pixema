@@ -1,6 +1,7 @@
+import { type IData } from '~/types/data';
+
 import { defaultvalue, LOAD_MOVIES } from './constants';
 import { type IMoviesListAction } from './types';
-import { type IData } from '../../../types/data';
 
 export const moviesListReducer = (
   state: IData = defaultvalue,

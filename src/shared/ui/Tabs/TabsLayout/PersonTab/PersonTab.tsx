@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
+import { type IMoviePerson } from '~/types/movie';
+
 import styles from './styles.module.scss';
-import { type IMoviePerson } from '../../../../../types/movie';
 
 interface PersonTabProperties {
   item: IMoviePerson;

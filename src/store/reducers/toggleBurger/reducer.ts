@@ -1,6 +1,7 @@
+import { type IBaseActionType } from '~/types/types';
+
 import { defaultValue, TOGGLE_BURGER } from './constants';
 import { type IBurgerState } from './types';
-import { type IBaseActionType } from '../../../types/types';
 
 export const burgerMenuReducer = (
   state: IBurgerState = defaultValue,

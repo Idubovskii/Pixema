@@ -2,7 +2,7 @@ import {
   type IBaseActionType,
   type IObjectStringList,
   type IUserType
-} from '../../../types/types';
+} from '~/types/types';
 
 interface ILoadUserRegisterActionType extends IBaseActionType {
   payload: IUserType | IObjectStringList;

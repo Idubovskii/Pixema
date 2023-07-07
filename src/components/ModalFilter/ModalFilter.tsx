@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { allGenres } from '~/constants/constants';
+import { CloseButton } from '~/shared/ui/buttons/CloseButton/CloseButoon';
+import { Input } from '~/shared/ui/Input/Input';
+import { Submit } from '~/shared/ui/Submit/Submit';
+import { filterAction } from '~/store/reducers/filter/actions';
+import { toggleFilterAction } from '~/store/reducers/toggleFilter/reducer';
+import { toggleFilterSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { allGenres } from '../../constants/constants';
-import { CloseButton } from '../../shared/ui/buttons/CloseButton/CloseButoon';
-import { Input } from '../../shared/ui/Input/Input';
-import { Submit } from '../../shared/ui/Submit/Submit';
-import { filterAction } from '../../store/reducers/filter/actions';
-import { toggleFilterAction } from '../../store/reducers/toggleFilter/reducer';
-import { toggleFilterSelector } from '../../store/selectors/selectors';
 
 export const ModalFilter = () => {
   const dispatch = useDispatch();

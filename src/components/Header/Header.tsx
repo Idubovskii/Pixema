@@ -1,13 +1,14 @@
 import MediaQuery from 'react-responsive';
 import { useLocation, useParams } from 'react-router-dom';
 
+import { BurgerMenu } from '~/components/BurgerMenu/BurgerMenu';
+import { ModalFilter } from '~/components/ModalFilter/ModalFilter';
+import { BurgerButton } from '~/shared/ui/buttons/BurgerButton/BurgerButton';
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
+import { UserButton } from '~/shared/ui/buttons/UserButton/UserButton';
+
 import { SearchBar } from './SearchBar/SearchBar';
 import styles from './styles.module.scss';
-import { BurgerButton } from '../../shared/ui/buttons/BurgerButton/BurgerButton';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
-import { UserButton } from '../../shared/ui/buttons/UserButton/UserButton';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { ModalFilter } from '../ModalFilter/ModalFilter';
 
 export const Header = () => {
   const location = useLocation();

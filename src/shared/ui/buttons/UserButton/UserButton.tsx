@@ -4,13 +4,11 @@ import useOutsideClick from '@rooks/use-outside-click';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { ArrowSvg } from '~/assets/svg/ArrowSvg';
+import { DropDownMenu } from '~/components/DropDownMenu/DropDownMenu';
+import { changeThemeSelector, userSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { ArrowSvg } from '../../../../assets/svg/ArrowSvg';
-import { DropDownMenu } from '../../../../components/DropDownMenu/DropDownMenu';
-import {
-  changeThemeSelector,
-  userSelector
-} from '../../../../store/selectors/selectors';
 
 export const UserButton = () => {
   const [isToggle, setToggle] = useState(false);

@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import styles from './styles.module.scss';
-import { LazyLoaderSvg } from '../../assets/svg/LazyLoaderSvg';
-import { loadMoviesAsyncAction } from '../../store/reducers/movies/actions';
+import { LazyLoaderSvg } from '~/assets/svg/LazyLoaderSvg';
+import { MovieCard } from '~/components/MovieCard/MovieCard';
+import { loadMoviesAsyncAction } from '~/store/reducers/movies/actions';
 import {
   changeThemeSelector,
   moviesSelector
-} from '../../store/selectors/selectors';
-import { MovieCard } from '../MovieCard/MovieCard';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 export const Movies = () => {
   const dispatch = useDispatch();

@@ -1,10 +1,11 @@
+import { type IMovie } from '~/types/movie';
+
 import {
   ADD_TO_FAVORITES,
   defaultState,
   DELETE_FROM_FAVORITES
 } from './constants';
 import { type IFavoriteActionType, type IFavoriteListState } from './types';
-import { type IMovie } from '../../../types/movie';
 
 export const favoriteReducer = (
   state: IFavoriteListState = defaultState,

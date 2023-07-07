@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
 import { Submit } from '~/shared/ui/Submit/Submit';
+import { changeThemeSelector } from '~/store/selectors/selectors';
 
 import styles from './styles.module.scss';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
-import { changeThemeSelector } from '../../store/selectors/selectors';
 
 interface LocationState {
   email: string;

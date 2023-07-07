@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import styles from './styles.module.scss';
-import { MovieCard } from '../../components/MovieCard/MovieCard';
-import { movieTypes } from '../../constants/constants';
-import { loadMoviesByfilterAsyncAction } from '../../store/reducers/movies/actions';
+import { MovieCard } from '~/components/MovieCard/MovieCard';
+import { movieTypes } from '~/constants/constants';
+import { loadMoviesByfilterAsyncAction } from '~/store/reducers/movies/actions';
 import {
   filtermovieSelector,
   moviesSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 export const Filter = () => {
   const [limit, setLimit] = useState(10);

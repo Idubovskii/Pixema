@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { signOutAction } from '~/store/reducers/auth/actions';
+
 import styles from './styles.module.scss';
-import { signOutAction } from '../../store/reducers/auth/actions';
 
 interface IProperties {
   isActive: boolean;

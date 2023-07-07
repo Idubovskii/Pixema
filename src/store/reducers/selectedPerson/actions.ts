@@ -1,8 +1,9 @@
+import { personResponseById } from '~/api/moviesService';
+import { type GlobalDispatch } from '~/store/store';
+import { type IPerson } from '~/types/person';
+
 import { LOAD_SELECTED_PERSON } from './constants';
 import { type SelectedPersonAction } from './types';
-import { personResponseById } from '../../../api/moviesService';
-import { type IPerson } from '../../../types/person';
-import { type GlobalDispatch } from '../../store';
 
 export const loadSelectedPersonAction = (
   person: IPerson

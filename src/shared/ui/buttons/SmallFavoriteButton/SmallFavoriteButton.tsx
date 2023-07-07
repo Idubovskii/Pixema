@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import styles from './styles.module.scss';
-import { CompleteSvg } from '../../../../assets/svg/CompleteSvg';
-import { FavoritesSvg } from '../../../../assets/svg/FavoritesSvg';
+import { CompleteSvg } from '~/assets/svg/CompleteSvg';
+import { FavoritesSvg } from '~/assets/svg/FavoritesSvg';
 import {
   addToFavoritesPostsAction,
   deleteFromFavoritesPostsAction
-} from '../../../../store/reducers/favorites/actions';
-import { favoritesMoviesSelector } from '../../../../store/selectors/selectors';
-import { type IMovie } from '../../../../types/movie';
+} from '~/store/reducers/favorites/actions';
+import { favoritesMoviesSelector } from '~/store/selectors/selectors';
+import { type IMovie } from '~/types/movie';
+
+import styles from './styles.module.scss';
 
 export const SmallFavoriteButton = (properties: { movie: IMovie }) => {
   const { movie } = properties;

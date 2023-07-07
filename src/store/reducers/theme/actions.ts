@@ -1,5 +1,6 @@
+import { type IBaseActionType } from '~/types/types';
+
 import { CHANGE_THEME } from './constants';
-import { type IBaseActionType } from '../../../types/types';
 
 export const ThemeColorAction = (): IBaseActionType => {
   return {

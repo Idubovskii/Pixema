@@ -7,13 +7,13 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
 import { Input } from '~/shared/ui/Input/Input';
 import { Submit } from '~/shared/ui/Submit/Submit';
-
-import styles from './styles.module.scss';
-import { registerUserAsyncAction } from '../../store/reducers/register/actions';
+import { registerUserAsyncAction } from '~/store/reducers/register/actions';
 import {
   changeThemeSelector,
   registerSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 const signUpValidationSchema = {
   name: {

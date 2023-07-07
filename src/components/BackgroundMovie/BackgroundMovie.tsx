@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { AgeRating } from '~/components/AgeRating/AgeRating';
+import { Genres } from '~/components/Genres/Genres';
+import { Rating } from '~/components/Rating/Rating';
+import { todayDate } from '~/shared/helpers/todayDate';
+import { loadBackgroundMovieAsyncAction } from '~/store/reducers/backgroundMovie/actions';
+import { backogroundMovieSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { todayDate } from '../../shared/helpers/todayDate';
-import { loadBackgroundMovieAsyncAction } from '../../store/reducers/backgroundMovie/actions';
-import { backogroundMovieSelector } from '../../store/selectors/selectors';
-import { AgeRating } from '../AgeRating/AgeRating';
-import { Genres } from '../Genres/Genres';
-import { Rating } from '../Rating/Rating';
 
 export const BackgroundMovie = () => {
   const dispatch = useDispatch();

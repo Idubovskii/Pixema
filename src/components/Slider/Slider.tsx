@@ -5,7 +5,7 @@ import { Navigation } from 'swiper';
 import { Swiper } from 'swiper/react';
 import { type NavigationOptions } from 'swiper/types';
 
-import { SliderButton } from '../../shared/ui/buttons/SliderButton/SliderButton';
+import { SliderButton } from '~/shared/ui/buttons/SliderButton/SliderButton';
 
 import './swiper.scss';
 

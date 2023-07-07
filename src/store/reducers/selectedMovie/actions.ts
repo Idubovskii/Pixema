@@ -1,8 +1,9 @@
+import { moviesResponseById } from '~/api/moviesService';
+import { type GlobalDispatch } from '~/store/store';
+import { type IMovie } from '~/types/movie';
+
 import { LOAD_SELECTED_MOVIE } from './constants';
 import { type SelectedMovieAction } from './types';
-import { moviesResponseById } from '../../../api/moviesService';
-import { type IMovie } from '../../../types/movie';
-import { type GlobalDispatch } from '../../store';
 
 export const loadSelectedMovieAction = (movie: IMovie): SelectedMovieAction => {
   return {

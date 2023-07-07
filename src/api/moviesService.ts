@@ -1,8 +1,7 @@
+import { API_KEY, KINO_API_URL } from '~/constants/constants';
 import { type IData } from '~/types/data';
 import { type IMovie } from '~/types/movie';
 import { type IPerson } from '~/types/person';
-
-import { API_KEY, KINO_API_URL } from '../constants/constants';
 
 export const moviesResponse = (limit: number) => {
   const URL = `${KINO_API_URL}movie?page=1&limit=${limit}&year=2022-2023`;

@@ -1,15 +1,16 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.module.scss';
-import { SmallFavoriteButton } from '../../shared/ui/buttons/SmallFavoriteButton/SmallFavoriteButton';
+import { Genres } from '~/components/Genres/Genres';
+import { Rating } from '~/components/Rating/Rating';
+import { SmallFavoriteButton } from '~/shared/ui/buttons/SmallFavoriteButton/SmallFavoriteButton';
 import {
   changeThemeSelector,
   favoritesMoviesSelector
-} from '../../store/selectors/selectors';
-import { type IMovieProperties } from '../../types/movie';
-import { Genres } from '../Genres/Genres';
-import { Rating } from '../Rating/Rating';
+} from '~/store/selectors/selectors';
+import { type IMovieProperties } from '~/types/movie';
+
+import styles from './styles.module.scss';
 
 export const MovieCard = ({ docs }: IMovieProperties) => {
   const hasTheme = useSelector(changeThemeSelector);

@@ -1,6 +1,7 @@
+import { type IBaseActionType } from '~/types/types';
+
 import { CHANGE_THEME, defaultValue } from './constants';
 import { type IThemeState } from './types';
-import { type IBaseActionType } from '../../../types/types';
 
 export const themeReducer = (
   state: IThemeState = defaultValue,

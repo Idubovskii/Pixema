@@ -1,4 +1,4 @@
-import { type IBaseActionType } from '../../../types/types';
+import { type IBaseActionType } from '~/types/types';
 
 export interface IBurgerState {
   isOpen: boolean;

@@ -4,16 +4,13 @@ import Validator, { type ValidationError } from 'fastest-validator';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
+import { Input } from '~/shared/ui/Input/Input';
 import { Submit } from '~/shared/ui/Submit/Submit';
+import { getUserAsyncAction } from '~/store/reducers/auth/actions';
+import { authSelector, changeThemeSelector } from '~/store/selectors/selectors';
 
 import styles from './styles.module.scss';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
-import { Input } from '../../shared/ui/Input/Input';
-import { getUserAsyncAction } from '../../store/reducers/auth/actions';
-import {
-  authSelector,
-  changeThemeSelector
-} from '../../store/selectors/selectors';
 
 const signInValidationSchema = {
   email: {

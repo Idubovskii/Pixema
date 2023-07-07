@@ -4,19 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import { useParams } from 'react-router-dom';
 
-import styles from './styles.module.scss';
-import { LazyLoaderSvg } from '../../assets/svg/LazyLoaderSvg';
-import { Facts } from '../../components/Facts/Facts';
-import { convertTimeToDate } from '../../shared/helpers/convertTimeToDate';
-import { Tabs } from '../../shared/ui/Tabs/Tabs';
-import { TabsLayout } from '../../shared/ui/Tabs/TabsLayout/TabsLayout';
-import { loadMoviesByIdAsyncAction } from '../../store/reducers/movies/actions';
-import { loadSelectedPersonAsyncAction } from '../../store/reducers/selectedPerson/actions';
+import { LazyLoaderSvg } from '~/assets/svg/LazyLoaderSvg';
+import { Facts } from '~/components/Facts/Facts';
+import { convertTimeToDate } from '~/shared/helpers/convertTimeToDate';
+import { Tabs } from '~/shared/ui/Tabs/Tabs';
+import { TabsLayout } from '~/shared/ui/Tabs/TabsLayout/TabsLayout';
+import { loadMoviesByIdAsyncAction } from '~/store/reducers/movies/actions';
+import { loadSelectedPersonAsyncAction } from '~/store/reducers/selectedPerson/actions';
 import {
   changeThemeSelector,
   moviesSelector,
   selectedPersonSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 export const SelectedPerson = () => {
   const { id } = useParams();

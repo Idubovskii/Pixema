@@ -1,3 +1,5 @@
+import { type IObjectStringList, type IUserType } from '~/types/types';
+
 import {
   ACTIVATION_FAILED,
   ACTIVATION_SUCCESS,
@@ -6,7 +8,6 @@ import {
   REGISTRATION_SUCCESS
 } from './constants';
 import { type IRegisterState, type ILoadUserRegisterActionType } from './types';
-import { type IObjectStringList, type IUserType } from '../../../types/types';
 
 export const registerReducer = (
   state: IRegisterState = defaultState,

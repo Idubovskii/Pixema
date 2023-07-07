@@ -1,13 +1,14 @@
-import { LOAD_MOVIES } from './constants';
-import { type IMoviesListAction } from './types';
 import {
   movieFilter,
   moviesPersonResponseById,
   moviesResponse,
   moviesResponseBySearch
-} from '../../../api/moviesService';
-import { type IData } from '../../../types/data';
-import { type GlobalDispatch } from '../../store';
+} from '~/api/moviesService';
+import { type GlobalDispatch } from '~/store/store';
+import { type IData } from '~/types/data';
+
+import { LOAD_MOVIES } from './constants';
+import { type IMoviesListAction } from './types';
 
 export const loadMoviesAction = (movies: IData): IMoviesListAction => {
   return {

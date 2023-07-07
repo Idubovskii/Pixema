@@ -4,13 +4,13 @@ import Validator, { type ValidationError } from 'fastest-validator';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
+import { Input } from '~/shared/ui/Input/Input';
 import { Submit } from '~/shared/ui/Submit/Submit';
+import { resetPasswordAsyncAction } from '~/store/reducers/reset/actions';
+import { changeThemeSelector } from '~/store/selectors/selectors';
 
 import styles from './styles.module.scss';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
-import { Input } from '../../shared/ui/Input/Input';
-import { resetPasswordAsyncAction } from '../../store/reducers/reset/actions';
-import { changeThemeSelector } from '../../store/selectors/selectors';
 
 const newPasswordValidationSchema = {
   password: {

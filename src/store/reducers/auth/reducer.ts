@@ -1,4 +1,10 @@
 import {
+  type IObjectStringList,
+  type ITokenDto,
+  type IUserType
+} from '~/types/types';
+
+import {
   defaultState,
   GET_ERRORS,
   GET_TOKEN_FAILED,
@@ -7,11 +13,6 @@ import {
   SIGN_OUT
 } from './constants';
 import { type AuthUserActionType, type IAuthState } from './types';
-import {
-  type IObjectStringList,
-  type ITokenDto,
-  type IUserType
-} from '../../../types/types';
 
 export const authReducer = (
   state: IAuthState = defaultState,

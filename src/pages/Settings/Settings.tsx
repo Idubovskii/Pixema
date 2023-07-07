@@ -6,19 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 import { Input } from '~/shared/ui/Input/Input';
 import { Submit } from '~/shared/ui/Submit/Submit';
-
-import styles from './styles.module.scss';
 import {
   patchEmailAsyncAction,
   patchPasswordAsyncAction,
   patchUserAsyncAction
-} from '../../store/reducers/auth/actions';
-import { ThemeColorAction } from '../../store/reducers/theme/actions';
+} from '~/store/reducers/auth/actions';
+import { ThemeColorAction } from '~/store/reducers/theme/actions';
 import {
   authSelector,
   changeThemeSelector,
   userSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 interface FormData {
   email: {

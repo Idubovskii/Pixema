@@ -1,4 +1,4 @@
-import { type GlobalState } from '../store';
+import { type GlobalState } from '~/store/store';
 
 export const toggleBurgerSelector = (state: GlobalState) =>
   state.toggleBurger.isOpen;

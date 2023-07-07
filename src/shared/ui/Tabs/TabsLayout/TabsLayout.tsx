@@ -1,14 +1,15 @@
 import { SwiperSlide } from 'swiper/react';
 
-import { PersonTab } from './PersonTab/PersonTab';
-import styles from './styles.module.scss';
-import { MovieCard } from '../../../../components/MovieCard/MovieCard';
-import { Slider } from '../../../../components/Slider/Slider';
+import { MovieCard } from '~/components/MovieCard/MovieCard';
+import { Slider } from '~/components/Slider/Slider';
 import {
   type IMovie,
   type IMoviePerson,
   type IMovieSimilar
-} from '../../../../types/movie';
+} from '~/types/movie';
+
+import { PersonTab } from './PersonTab/PersonTab';
+import styles from './styles.module.scss';
 
 interface ITabsLayout {
   roles?: IMoviePerson[] | undefined;

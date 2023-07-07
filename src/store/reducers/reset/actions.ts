@@ -1,8 +1,9 @@
+import { fetchNewPassword } from '~/api/userService';
+import { type GlobalDispatch } from '~/store/store';
+import { type IObjectStringList } from '~/types/types';
+
 import { RESET_FAILED, RESET_SUCCESS } from './constants';
 import { type IResetPasswordAction } from './types';
-import { fetchNewPassword } from '../../../api/userService';
-import { type IObjectStringList } from '../../../types/types';
-import { type GlobalDispatch } from '../../store';
 
 export const ResetSuccessAction = (): IResetPasswordAction => {
   return { type: RESET_SUCCESS };

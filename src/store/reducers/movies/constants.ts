@@ -1,5 +1,5 @@
-import { type IData } from '../../../types/data';
-import { type IMovie } from '../../../types/movie';
+import { type IData } from '~/types/data';
+import { type IMovie } from '~/types/movie';
 
 export const LOAD_MOVIES = 'LOAD_MOVIES';
 export const defaultvalue: IData = {

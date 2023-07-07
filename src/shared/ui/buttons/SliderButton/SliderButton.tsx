@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 
+import { SliderArrowSvg } from '~/assets/svg/SliderArrowSvg';
+
 import styles from './styles.module.scss';
-import { SliderArrowSvg } from '../../../../assets/svg/SliderArrowSvg';
 interface SliderButtonProperties {
   dir: 'left' | 'right';
 }

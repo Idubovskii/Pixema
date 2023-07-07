@@ -1,6 +1,7 @@
+import { type IObjectStringList } from '~/types/types';
+
 import { defaultState, RESET_FAILED, RESET_SUCCESS } from './constants';
 import { type IResetPasswordAction, type IResetState } from './types';
-import { type IObjectStringList } from '../../../types/types';
 
 export const resetReducer = (
   state: IResetState = defaultState,

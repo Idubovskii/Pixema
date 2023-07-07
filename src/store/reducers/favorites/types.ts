@@ -1,6 +1,6 @@
-import { type IData } from '../../../types/data';
-import { type IMovie } from '../../../types/movie';
-import { type IBaseActionType } from '../../../types/types';
+import { type IData } from '~/types/data';
+import { type IMovie } from '~/types/movie';
+import { type IBaseActionType } from '~/types/types';
 
 export interface IFavoriteActionType extends IBaseActionType {
   payload: IMovie | IData[] | number;

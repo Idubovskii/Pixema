@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { FilterButton } from '~/shared/ui/buttons/FilterButton/FilterButton';
+import { SearchButton } from '~/shared/ui/buttons/SearchButton/SearchButton';
+import { changeThemeSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { FilterButton } from '../../../shared/ui/buttons/FilterButton/FilterButton';
-import { SearchButton } from '../../../shared/ui/buttons/SearchButton/SearchButton';
-import { changeThemeSelector } from '../../../store/selectors/selectors';
 
 export const SearchBar = () => {
   const hasTheme = useSelector(changeThemeSelector);

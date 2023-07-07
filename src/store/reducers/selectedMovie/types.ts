@@ -1,5 +1,5 @@
-import { type IMovie } from '../../../types/movie';
-import { type IBaseActionType } from '../../../types/types';
+import { type IMovie } from '~/types/movie';
+import { type IBaseActionType } from '~/types/types';
 
 export interface SelectedMovieState {
   movie: IMovie;

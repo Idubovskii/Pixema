@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 
+import { FilterSvg } from '~/assets/svg/FilterSvg';
+import { toggleFilterAction } from '~/store/reducers/toggleFilter/reducer';
+
 import styles from './styles.module.scss';
-import { FilterSvg } from '../../../../assets/svg/FilterSvg';
-import { toggleFilterAction } from '../../../../store/reducers/toggleFilter/reducer';
 
 export const FilterButton = () => {
   const dispatch = useDispatch();

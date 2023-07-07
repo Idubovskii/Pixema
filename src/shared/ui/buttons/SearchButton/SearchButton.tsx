@@ -1,5 +1,6 @@
+import { SearchIcoSvg } from '~/assets/svg/SearchIcoSvg';
+
 import styles from './styles.module.scss';
-import { SearchIcoSvg } from '../../../../assets/svg/SearchIcoSvg';
 
 interface ISearchButtonProperties {
   className: string;

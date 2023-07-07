@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { MovieCard } from '~/components/MovieCard/MovieCard';
+import { movieTypes } from '~/constants/constants';
+import { loadMoviesBySearchAsyncAction } from '~/store/reducers/movies/actions';
+import { moviesSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { MovieCard } from '../../components/MovieCard/MovieCard';
-import { movieTypes } from '../../constants/constants';
-import { loadMoviesBySearchAsyncAction } from '../../store/reducers/movies/actions';
-import { moviesSelector } from '../../store/selectors/selectors';
 
 export const Search = () => {
   const [limit, setLimit] = useState(10);

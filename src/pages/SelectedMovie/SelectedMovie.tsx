@@ -4,27 +4,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import { useParams } from 'react-router-dom';
 
-import styles from './styles.module.scss';
-import { LazyLoaderSvg } from '../../assets/svg/LazyLoaderSvg';
-import { AgeRating } from '../../components/AgeRating/AgeRating';
-import { Facts } from '../../components/Facts/Facts';
-import { Genres } from '../../components/Genres/Genres';
-import { Rating } from '../../components/Rating/Rating';
-import { Time } from '../../components/Time/Time';
-import { getRandomInt } from '../../shared/helpers/getRandomInt';
-import { FavoriteButton } from '../../shared/ui/buttons/FavoriteButton/FavoriteButton';
-import { Tabs } from '../../shared/ui/Tabs/Tabs';
-import { TabsLayout } from '../../shared/ui/Tabs/TabsLayout/TabsLayout';
-import { loadSelectedMovieAsyncAction } from '../../store/reducers/selectedMovie/actions';
+import { LazyLoaderSvg } from '~/assets/svg/LazyLoaderSvg';
+import { AgeRating } from '~/components/AgeRating/AgeRating';
+import { Facts } from '~/components/Facts/Facts';
+import { Genres } from '~/components/Genres/Genres';
+import { Rating } from '~/components/Rating/Rating';
+import { Time } from '~/components/Time/Time';
+import { getRandomInt } from '~/shared/helpers/getRandomInt';
+import { FavoriteButton } from '~/shared/ui/buttons/FavoriteButton/FavoriteButton';
+import { Tabs } from '~/shared/ui/Tabs/Tabs';
+import { TabsLayout } from '~/shared/ui/Tabs/TabsLayout/TabsLayout';
+import { loadSelectedMovieAsyncAction } from '~/store/reducers/selectedMovie/actions';
 import {
   changeThemeSelector,
   selectedMovieSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
 import {
   type IMovie,
   type IMoviePerson,
   type IMovieSimilar
-} from '../../types/movie';
+} from '~/types/movie';
+
+import styles from './styles.module.scss';
 
 export const SelectedMovie = () => {
   const { id } = useParams();

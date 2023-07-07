@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
 import { Submit } from '~/shared/ui/Submit/Submit';
 
 import styles from './styles.module.scss';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
 
 export const Success = () => {
   const navigate = useNavigate();

@@ -1,5 +1,6 @@
+import { type IMovie } from '~/types/movie';
+
 import styles from './styles.module.scss';
-import { type IMovie } from '../../types/movie';
 
 export const AgeRating = ({ ageRating }: IMovie) => {
   return (

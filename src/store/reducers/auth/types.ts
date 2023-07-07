@@ -3,7 +3,7 @@ import {
   type IObjectStringList,
   type ITokenDto,
   type IUserType
-} from '../../../types/types';
+} from '~/types/types';
 
 export interface IAuthState {
   tokens: ITokenDto | null;

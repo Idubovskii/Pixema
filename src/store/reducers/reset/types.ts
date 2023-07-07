@@ -1,7 +1,4 @@
-import {
-  type IBaseActionType,
-  type IObjectStringList
-} from '../../../types/types';
+import { type IBaseActionType, type IObjectStringList } from '~/types/types';
 
 export interface IResetPasswordAction extends IBaseActionType {
   payload?: null | IObjectStringList;

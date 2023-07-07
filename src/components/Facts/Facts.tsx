@@ -1,5 +1,6 @@
+import { type IFact } from '~/types/movie';
+
 import styles from './styles.module.scss';
-import { type IFact } from '../../types/movie';
 
 interface IFacts {
   facts: IFact[] | undefined;

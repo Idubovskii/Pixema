@@ -2,14 +2,14 @@ import { useSelector } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 
-import { BackgroundMovie } from '../../components/BackgroundMovie/BackgroundMovie';
-import { BurgerMenu } from '../../components/BurgerMenu/BurgerMenu';
-import { Footer } from '../../components/Footer/Footer';
-import { Header } from '../../components/Header/Header';
+import { BackgroundMovie } from '~/components/BackgroundMovie/BackgroundMovie';
+import { BurgerMenu } from '~/components/BurgerMenu/BurgerMenu';
+import { Footer } from '~/components/Footer/Footer';
+import { Header } from '~/components/Header/Header';
 import {
   changeThemeSelector,
   toggleFilterSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
 
 interface RouteParameters {
   uid: string;

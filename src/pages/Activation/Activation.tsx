@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { activateUserAsyncAction } from '../../store/reducers/register/actions';
+import { activateUserAsyncAction } from '~/store/reducers/register/actions';
 
 export const Activation = () => {
   const navigate = useNavigate();

@@ -1,3 +1,7 @@
+import { activateUser, registerUser } from '~/api/registerService';
+import { type GlobalDispatch } from '~/store/store';
+import { type IObjectStringList, type IUserType } from '~/types/types';
+
 import {
   ACTIVATION_FAILED,
   ACTIVATION_SUCCESS,
@@ -5,9 +9,6 @@ import {
   REGISTRATION_SUCCESS
 } from './constants';
 import { type ILoadUserRegisterActionType } from './types';
-import { activateUser, registerUser } from '../../../api/registerService';
-import { type IObjectStringList, type IUserType } from '../../../types/types';
-import { type GlobalDispatch } from '../../store';
 
 export const loadUserRegisterAction = (
   user: IUserType

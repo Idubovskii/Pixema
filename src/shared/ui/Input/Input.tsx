@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
+import { changeThemeSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { changeThemeSelector } from '../../../store/selectors/selectors';
 
 interface IInputProperties {
   type: string;

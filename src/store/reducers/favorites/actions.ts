@@ -1,5 +1,6 @@
+import { type IMovie } from '~/types/movie';
+
 import { ADD_TO_FAVORITES, DELETE_FROM_FAVORITES } from './constants';
-import { type IMovie } from '../../../types/movie';
 
 export const addToFavoritesPostsAction = (movie: IMovie) => {
   return {

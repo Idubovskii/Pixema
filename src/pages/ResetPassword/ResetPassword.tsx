@@ -3,13 +3,13 @@ import { type FormEventHandler, useState } from 'react';
 import Validator, { type ValidationError } from 'fastest-validator';
 import { useSelector } from 'react-redux';
 
+import { fetchResetPassword } from '~/api/userService';
+import { LogoButton } from '~/shared/ui/buttons/LogoButton/LogoButton';
+import { Input } from '~/shared/ui/Input/Input';
 import { Submit } from '~/shared/ui/Submit/Submit';
+import { changeThemeSelector } from '~/store/selectors/selectors';
 
 import styles from './styles.module.scss';
-import { fetchResetPassword } from '../../api/userService';
-import { LogoButton } from '../../shared/ui/buttons/LogoButton/LogoButton';
-import { Input } from '../../shared/ui/Input/Input';
-import { changeThemeSelector } from '../../store/selectors/selectors';
 
 interface FormData {
   email: {

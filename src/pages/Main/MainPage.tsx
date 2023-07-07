@@ -1,5 +1,6 @@
+import { Movies } from '~/components/Movies/Movies';
+
 import styles from './styles.module.scss';
-import { Movies } from '../../components/Movies/Movies';
 
 export const Main = () => {
   return (

@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import styles from './styles.module.scss';
-import { LogoSvg } from '../../../../assets/svg/LogoSvg';
+import { LogoSvg } from '~/assets/svg/LogoSvg';
 import {
   changeThemeSelector,
   toggleBurgerSelector
-} from '../../../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 interface IProperties {
   className?: string;

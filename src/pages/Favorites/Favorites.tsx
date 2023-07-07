@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 
-import styles from './styles.module.scss';
-import { MovieCard } from '../../components/MovieCard/MovieCard';
+import { MovieCard } from '~/components/MovieCard/MovieCard';
 import {
   changeThemeSelector,
   favoritesMoviesSelector
-} from '../../store/selectors/selectors';
+} from '~/store/selectors/selectors';
+
+import styles from './styles.module.scss';
 
 export const Favorites = () => {
   const favoritesMovies = useSelector(favoritesMoviesSelector);

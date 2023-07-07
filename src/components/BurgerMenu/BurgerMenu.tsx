@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
+import { FavoritesSvg } from '~/assets/svg/FavoritesSvg';
+import { HomeSvg } from '~/assets/svg/HomeSvg';
+import { SettingSvg } from '~/assets/svg/SettingSvg';
+import { pathnames } from '~/constants/constants';
+import { toggleBurgerSelector } from '~/store/selectors/selectors';
+
 import styles from './styles.module.scss';
-import { FavoritesSvg } from '../../assets/svg/FavoritesSvg';
-import { HomeSvg } from '../../assets/svg/HomeSvg';
-import { SettingSvg } from '../../assets/svg/SettingSvg';
-import { pathnames } from '../../constants/constants';
-import { toggleBurgerSelector } from '../../store/selectors/selectors';
 
 export const BurgerMenu = () => {
   const location = useLocation();

@@ -1,3 +1,19 @@
+import { getTokensUser } from '~/api/authService';
+import {
+  fetchRefreshToken,
+  getUser,
+  patchEmail,
+  patchPassword,
+  patchUser
+} from '~/api/userService';
+import { type GlobalDispatch, type GlobalState } from '~/store/store';
+import {
+  type IBaseActionType,
+  type IObjectStringList,
+  type ITokenDto,
+  type IUserType
+} from '~/types/types';
+
 import {
   GET_ERRORS,
   GET_TOKEN_FAILED,
@@ -6,21 +22,6 @@ import {
   SIGN_OUT
 } from './constants';
 import { type AuthUserActionType } from './types';
-import { getTokensUser } from '../../../api/authService';
-import {
-  fetchRefreshToken,
-  getUser,
-  patchEmail,
-  patchPassword,
-  patchUser
-} from '../../../api/userService';
-import {
-  type IBaseActionType,
-  type IObjectStringList,
-  type ITokenDto,
-  type IUserType
-} from '../../../types/types';
-import { type GlobalDispatch, type GlobalState } from '../../store';
 
 export const getTokensSuccessAction = (
   tokens: ITokenDto
