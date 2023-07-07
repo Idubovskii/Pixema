@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { STUD_API_URL } from '~/constants/constants';
 
 interface ResponseUsers {
@@ -10,31 +12,29 @@ interface UserActivation {
   uid: string;
   token: string;
 }
+
 export const registerUser = async (
   username: string,
   email: string,
   password: string
 ) => {
   const url = `${STUD_API_URL}auth/users/`;
-  const parameters = {
-    method: 'POST',
+  const data = {
+    username,
+    email,
+    password
+  };
+
+  const response = await axios.post<ResponseUsers>(url, data, {
     headers: {
       'Content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      username,
-      email,
-      password
-    })
-  };
-  const request = new Request(url, parameters);
-  const response = await fetch(request);
-  const result = (await response.json()) as ResponseUsers;
+    }
+  });
 
   return {
-    isOk: response.ok,
+    isOk: response.status === 200,
     status: response.status,
-    data: result
+    data: response.data
   };
 };
 
@@ -43,25 +43,25 @@ export const activateUser = async (
   token: string
 ): Promise<{ isOk: boolean; status: number; data: UserActivation }> => {
   const url = `${STUD_API_URL}auth/users/activation/`;
-  const parameters = {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      uid,
-      token
-    })
+  const data = {
+    uid,
+    token
   };
-  const request = new Request(url, parameters);
-  const response = await fetch(request);
-  const result = (await (response.ok
-    ? Promise.resolve(null)
-    : response.json())) as UserActivation;
 
-  return {
-    isOk: response.ok,
-    status: response.status,
-    data: result
-  };
+  try {
+    const response = await axios.post<UserActivation>(url, data, {
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+
+    return {
+      isOk: response.status === 200,
+      status: response.status,
+      data: response.data
+    };
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };

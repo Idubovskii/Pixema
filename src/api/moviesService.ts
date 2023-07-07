@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { API_KEY, KINO_API_URL } from '~/constants/constants';
 import { type IData } from '~/types/data';
 import { type IMovie } from '~/types/movie';
@@ -5,14 +7,13 @@ import { type IPerson } from '~/types/person';
 
 export const moviesResponse = (limit: number) => {
   const URL = `${KINO_API_URL}movie?page=1&limit=${limit}&year=2022-2023`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IData>;
+  return axios
+    .get<IData>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const moviesResponseById = (id: string | undefined) => {
@@ -20,14 +21,13 @@ export const moviesResponseById = (id: string | undefined) => {
     throw new Error('Invalid id');
   }
   const URL = `${KINO_API_URL}movie/${id}`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IMovie>;
+  return axios
+    .get<IMovie>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const moviesPersonResponseById = (
@@ -35,14 +35,13 @@ export const moviesPersonResponseById = (
   query: string | undefined
 ) => {
   const URL = `${KINO_API_URL}movie${query ? `?${query}` : ''}&limit=${limit}`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IData>;
+  return axios
+    .get<IData>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const personResponseById = (id: string | undefined) => {
@@ -50,14 +49,13 @@ export const personResponseById = (id: string | undefined) => {
     throw new Error('Invalid id');
   }
   const URL = `${KINO_API_URL}person/${id}`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IPerson>;
+  return axios
+    .get<IPerson>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const moviesResponseBySearch = (
@@ -68,36 +66,33 @@ export const moviesResponseBySearch = (
     throw new Error('Query parameter is undefined');
   }
   const URL = `${KINO_API_URL}movie?${query}&limit=${limit}`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IData>;
+  return axios
+    .get<IData>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const randomMovie = () => {
   const URL = `${KINO_API_URL}movie/random`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IMovie>;
+  return axios
+    .get<IMovie>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };
 
 export const movieFilter = (query: string, limit: number) => {
   const URL = `${KINO_API_URL}movie?${query}&limit=${limit}`;
-  const request = new Request(URL, {
-    method: 'GET',
-    headers: {
-      'X-API-KEY': `${API_KEY}`
-    }
-  });
-
-  return fetch(request).then((response) => response.json()) as Promise<IData>;
+  return axios
+    .get<IData>(URL, {
+      headers: {
+        'X-API-KEY': API_KEY
+      }
+    })
+    .then((response) => response.data);
 };

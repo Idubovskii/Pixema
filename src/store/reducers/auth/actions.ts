@@ -51,7 +51,7 @@ export const getErrorsAction = (errors: IObjectStringList = {}) => {
 export const getTokensAsyncAction = (email: string, password: string): any => {
   return async (dispatch: GlobalDispatch) => {
     const result = await getTokensUser(email, password);
-    if (result.isOk) {
+    if (result) {
       dispatch(getTokensSuccessAction(result.data));
     } else {
       dispatch(getTokensFailedAction());
