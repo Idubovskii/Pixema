@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
+import useOutsideClick from '@rooks/use-outside-click';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,15 +25,23 @@ export const ModalFilter = () => {
   const [sortBy, setSortBy] = useState('rating.kp');
   const [hasActiveUl, setActiveUl] = useState(false);
   const [stateGenre, setStateGenre] = useState('');
+  const genreReference = useRef<HTMLLabelElement>(
+    null
+  ) as React.MutableRefObject<HTMLLabelElement>;
+  const modalReference = useRef<HTMLDivElement>(
+    null
+  ) as React.MutableRefObject<HTMLDivElement>;
 
   const changeValueYearFrom = (event: React.ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.currentTarget.value;
     setStateYearFrom(currentValue);
   };
+
   const changeValueYearTo = (event: React.ChangeEvent<HTMLInputElement>) => {
     const currentValue = event.currentTarget.value;
     setStateYearTo(currentValue);
   };
+
   const changeValueRatingFrom = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -44,6 +53,7 @@ export const ModalFilter = () => {
     const currentValue = event.currentTarget.value;
     setStateRatingTo(currentValue);
   };
+
   const handleClick = () => {
     dispatch(
       filterAction(
@@ -67,7 +77,28 @@ export const ModalFilter = () => {
     setStateGenre('');
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalReference.current &&
+        !modalReference.current.contains(event.target as Node)
+      ) {
+        dispatch(toggleFilterAction());
+      }
+    };
+    if (hasToggleFilter) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [dispatch, hasToggleFilter]);
+
   document.body.style.overflow = hasToggleFilter ? 'hidden' : 'auto';
+
+  useOutsideClick(genreReference, () => setActiveUl(false));
 
   return (
     <div
@@ -78,6 +109,7 @@ export const ModalFilter = () => {
       }
     >
       <div
+        ref={modalReference}
         className={
           hasToggleFilter
             ? `${styles.modal_content} ${styles.active}`
@@ -114,6 +146,7 @@ export const ModalFilter = () => {
             <h3>Жанры</h3>
             <ul className={hasActiveUl ? `${styles.active_ul}` : ''}>
               <label
+                ref={genreReference}
                 onClick={() => {
                   setActiveUl(!hasActiveUl);
                 }}

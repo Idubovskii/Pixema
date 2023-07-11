@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import useOutsideClick from '@rooks/use-outside-click';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { MovieCard } from '~/components/MovieCard/MovieCard';
@@ -19,6 +20,10 @@ export const Filter = () => {
   const [sortTypeName, setSortTypeName] = useState('убыванию');
   const [hasActiveUl, setActiveUl] = useState(false);
   const [movieType, setMovieType] = useState('');
+  const genreReference = useRef<HTMLLabelElement>(
+    null
+  ) as React.MutableRefObject<HTMLLabelElement>;
+
   useEffect(() => {
     if (
       document.documentElement.clientWidth <= 1366 &&
@@ -62,12 +67,15 @@ export const Filter = () => {
     }
   };
 
+  useOutsideClick(genreReference, () => setActiveUl(false));
+
   return (
     <div className={styles.movies_container}>
       <div className={styles.movies_buttons}>
         <button onClick={handleSort}>Сортировать по: {sortTypeName}</button>
         <ul className={hasActiveUl ? `${styles.active_ul}` : ''}>
           <label
+            ref={genreReference}
             onClick={() => {
               setActiveUl(!hasActiveUl);
             }}
