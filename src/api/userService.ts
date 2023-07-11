@@ -95,8 +95,8 @@ export const patchPassword = async (
       Authorization: `Bearer ${token}`
     },
     body: JSON.stringify({
-      currentPassword: currentPassword,
-      newPassword: newPassword
+      new_password: newPassword,
+      current_password: currentPassword
     })
   };
   const request = new Request(url, parameters);
@@ -142,7 +142,7 @@ export const fetchNewPassword = async (
     body: JSON.stringify({
       uid: uid,
       token: token,
-      newPassword: newPassword
+      new_password: newPassword
     })
   };
   const request = new Request(url, parameters);

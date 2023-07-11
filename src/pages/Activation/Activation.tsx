@@ -7,7 +7,7 @@ import { activateUserAsyncAction } from '~/store/reducers/register/actions';
 
 export const Activation = () => {
   const navigate = useNavigate();
-  const { uid, token } = useParams();
+  const { uid, token } = useParams<'uid' | 'token'>();
   const dispatch = useDispatch();
   useEffect(() => {
     if (uid && token) {

@@ -32,7 +32,7 @@ export const registerUser = async (
   });
 
   return {
-    isOk: response.status === 200,
+    isOk: response.status,
     status: response.status,
     data: response.data
   };

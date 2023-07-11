@@ -20,24 +20,6 @@ import {
 
 import styles from './styles.module.scss';
 
-interface FormData {
-  email: {
-    value: string;
-  };
-  name: {
-    value: string;
-  };
-  current_password: {
-    value: string;
-  };
-  new_password: {
-    value: string;
-  };
-  confirmpassword: {
-    value: string;
-  };
-}
-
 const settingsValidationSchema = {
   name: {
     type: 'string',
@@ -51,7 +33,6 @@ const settingsValidationSchema = {
   },
   oldpassword: {
     type: 'string',
-    field: 'current_password',
     min: 8,
     max: 16,
     optional: true,
@@ -66,7 +47,7 @@ const settingsValidationSchema = {
   },
   confirmpassword: {
     type: 'equal',
-    field: 'new_password',
+    field: 'newpassword',
     optional: true,
     nullable: true
   }
@@ -102,22 +83,42 @@ export const Settings = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    const formData = event.currentTarget as unknown as FormData;
-    const name: string = formData.name.value;
-    const email: string = formData.email.value;
-    const oldpassword: string = formData.current_password.value;
-    const newpassword: string = formData.new_password.value;
+    const name: string =
+      (event.currentTarget.elements.namedItem('username') as HTMLInputElement)
+        ?.value ?? '';
+    const email: string =
+      (event.currentTarget.elements.namedItem('email') as HTMLInputElement)
+        ?.value ?? '';
+    const oldpassword: string =
+      (
+        event.currentTarget.elements.namedItem(
+          'oldpassword'
+        ) as HTMLInputElement
+      )?.value ?? '';
+    const newpassword: string =
+      (
+        event.currentTarget.elements.namedItem(
+          'newpassword'
+        ) as HTMLInputElement
+      )?.value ?? '';
+    const confirmpassword: string =
+      (
+        event.currentTarget.elements.namedItem(
+          'confirmpassword'
+        ) as HTMLInputElement
+      )?.value ?? '';
+
     const changeNameResult = check(settingsValidationSchema, {
-      name: formData.name.value
+      name: name
     });
     const changeEmailResult = check(settingsValidationSchema, {
-      email: formData.email.value,
-      oldpassword: formData.current_password.value
+      email: email,
+      oldpassword: oldpassword
     });
     const changePasswordResult = check(settingsValidationSchema, {
-      oldpassword: formData.current_password.value,
-      newpassword: formData.new_password.value,
-      confirmpassword: formData.confirmpassword.value
+      oldpassword: oldpassword,
+      newpassword: newpassword,
+      confirmpassword: confirmpassword
     });
 
     if (changeNameResult === true) {
@@ -172,7 +173,7 @@ export const Settings = () => {
     for (const key in auth.errors) {
       switch (key) {
         case 'username': {
-          const userNameError: string[] = auth.errors[key];
+          const userNameError = auth.errors[key];
           if (userNameError) {
             setNameError('Пользователь с этим именем уже существует');
           } else {
@@ -182,7 +183,7 @@ export const Settings = () => {
           break;
         }
         case 'new_email': {
-          const userEmailError: string[] = auth.errors[key];
+          const userEmailError = auth.errors[key];
           if (userEmailError) {
             setEmailError('Пользователь с этой почтой уже существует');
           } else {
@@ -192,7 +193,7 @@ export const Settings = () => {
           break;
         }
         case 'current_password': {
-          const userPasswordError: string[] = auth.errors[key];
+          const userPasswordError = auth.errors[key];
           if (userPasswordError) {
             setPasswordError('Неправильный пароль');
           } else {
