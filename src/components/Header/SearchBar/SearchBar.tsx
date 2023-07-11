@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type React from 'react';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -18,8 +19,16 @@ export const SearchBar = () => {
   };
 
   const onClick = () => {
-    navigate(`/search/${searchText}`);
-    setSearchText('');
+    if (searchText) {
+      navigate(`/search/${searchText}`);
+      setSearchText('');
+    }
+  };
+
+  const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      onClick();
+    }
   };
 
   return (
@@ -34,6 +43,7 @@ export const SearchBar = () => {
         placeholder="Фильмы и сериалы"
         value={searchText}
         onChange={onChange}
+        onKeyDown={onKeyPress}
       />
       <SearchButton
         onClick={onClick}
