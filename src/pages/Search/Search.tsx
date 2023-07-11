@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import useOutsideClick from '@rooks/use-outside-click';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -15,6 +16,9 @@ export const Search = () => {
   const [count, setCount] = useState(10);
   const [movieType, setMovieType] = useState('');
   const [hasActiveUl, setActiveUl] = useState(false);
+  const genreReference = useRef<HTMLLabelElement>(
+    null
+  ) as React.MutableRefObject<HTMLLabelElement>;
   useEffect(() => {
     if (
       document.documentElement.clientWidth <= 1366 &&
@@ -44,11 +48,14 @@ export const Search = () => {
     dispatch(loadMoviesBySearchAsyncAction(limit, query));
   }, [dispatch, limit, query]);
 
+  useOutsideClick(genreReference, () => setActiveUl(false));
+
   return (
     <div className={styles.movies_container}>
       <div className={styles.movies_buttons}>
         <ul className={hasActiveUl ? `${styles.active_ul}` : ''}>
           <label
+            ref={genreReference}
             onClick={() => {
               setActiveUl(!hasActiveUl);
             }}

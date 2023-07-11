@@ -37,7 +37,8 @@ export const store = configureStore({
       }
     }),
     thunkMiddleware
-  ]
+  ],
+  devTools: import.meta.env.DEV
 });
 
 export const persistor = persistStore(store);
