@@ -351,7 +351,6 @@ export const Settings = () => {
         <div className={styles.theme_container}>
           <div className={styles.theme_description}>
             <p>Тёмная тема</p>
-            <p>Используется тёмная тема</p>
           </div>
           <div className={styles.switch_container}>
             <input
