@@ -1,101 +1,103 @@
 @import '../../styles/variables.scss';
 
 .burger_menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: $background-dark;
+  box-shadow: 0 5px 10px rgba($color: $background-black, $alpha: 0.7);
+  z-index: 1000;
+  padding: 0px 50px;
+  padding-top: 140px;
+  width: 300px;
+  height: 340px;
+  left: 150px;
+  top: 0px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+
+  @media (max-width: 1760px) {
+    left: 70px;
+  }
+
+  @media (max-width: 1730px) {
+    left: 106px;
+  }
+
+  @media (max-width: 1540px) {
+    left: 70px;
+  }
+
+  a {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    background: $background-dark;
-    box-shadow: 0 5px 10px rgba($color: $background-black, $alpha: 0.7);
-    z-index: 1000;
-    padding: 0px 50px;
-    padding-top: 140px;
-    width: 300px;
-    height: 340px;
-    left: 150px;
-    top: 0px;
-    border-radius: 10px;
-    opacity: 0;
-    transition: 0.3s;
-    pointer-events: none;
+    height: 40px;
+    align-items: center;
+    justify-content: left;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 10px;
 
-    @media (max-width: 1760px) {
-        left: 70px;
+    &:hover p {
+      color: $primary-color;
     }
 
-    @media (max-width: 1730px) {
-        left: 106px;
+    path {
+      transition: 0.3s;
     }
 
-    @media (max-width: 1540px) {
-        left: 70px;
+    &:hover path {
+      fill: $primary-color;
     }
 
-    a {
-        display: flex;
-        height: 40px;
-        align-items: center;
-        justify-content: left;
-        font-weight: 600;
-        text-decoration: none;
-        margin-bottom: 10px;
+    p {
+      margin-left: 10px;
+      color: $white-color;
+      font-size: 16px;
+      transition: 0.3s;
+      @media (max-width: 400px) {
+        font-size: 13px;
+      }
+    }
+  }
 
-        &:hover p {
-            color: $primary-color;
-        }
-
-        path {
-            transition: 0.3s;
-        }
-
-        &:hover path {
-            fill: $primary-color
-        }
-
-        p {
-            margin-left: 10px;
-            color: $white-color;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+  .active_link {
+    path {
+      fill: $primary-color;
     }
 
-    .active_link {
-        path {
-            fill: $primary-color;
-        }
-
-        p {
-            color: $primary-color;
-        }
+    p {
+      color: $primary-color;
     }
+  }
 }
 
 .active {
-    pointer-events: all;
-    opacity: 1;
+  pointer-events: all;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
-    .burger_menu {
-        position: sticky;
-        align-items: center;
-        border-radius: 0;
-        bottom: -1px;
-        flex-direction: row;
-        height: 100px;
-        justify-content: space-evenly;
-        left: 0;
-        padding: 20px;
-        pointer-events: all;
-        width: 100%;
-        z-index: 9999;
-        opacity: 1;
+  .burger_menu {
+    position: sticky;
+    align-items: center;
+    border-radius: 0;
+    bottom: -1px;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-evenly;
+    left: 0;
+    padding: 20px;
+    pointer-events: all;
+    width: 100%;
+    z-index: 9999;
+    opacity: 1;
 
-        a {
-            p {
-                margin-left: 3px;
-            }
-        }
+    a {
+      p {
+        margin-left: 3px;
+      }
     }
-
+  }
 }

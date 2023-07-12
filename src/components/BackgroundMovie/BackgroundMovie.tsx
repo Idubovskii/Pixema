@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { AgeRating } from '~/components/AgeRating/AgeRating';
 import { Genres } from '~/components/Genres/Genres';
 import { Rating } from '~/components/Rating/Rating';
+import { useAppDispatch } from '~/shared/helpers/hooks';
 import { todayDate } from '~/shared/helpers/todayDate';
 import { loadBackgroundMovieAsyncAction } from '~/store/reducers/backgroundMovie/actions';
 import { backogroundMovieSelector } from '~/store/selectors/selectors';
@@ -13,7 +14,7 @@ import { backogroundMovieSelector } from '~/store/selectors/selectors';
 import styles from './styles.module.scss';
 
 export const BackgroundMovie = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const movie = useSelector(backogroundMovieSelector);
   const [oldDate, setOldDate] = useState(
     localStorage.getItem('oldDate') || `${todayDate() - 1}`
