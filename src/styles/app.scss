@@ -1,34 +1,36 @@
 .app {
-    transition: 0.4s;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: black;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: black;
 }
 
 .bg-app {
-    background: black no-repeat center url(../assets/backgrounds/main_background.png);
-    background-size: cover;
+  background: black no-repeat center
+    url(../assets/backgrounds/main_background.png);
+  background-size: cover;
 }
 
 .bg-app-light {
-    background: white no-repeat center url(../assets/backgrounds/main_background.png);
+  background: white no-repeat center
+    url(../assets/backgrounds/main_background.png);
 }
 
 .wrapper {
+  padding: 0 20px;
+  min-height: 80vh;
+
+  @media (max-width: 1760px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (max-width: 660px) {
     padding: 0 20px;
-    min-height: 80vh;
-
-    @media (max-width: 1760px) {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    @media (max-width: 660px) {
-        padding: 0 20px
-    }
+  }
 }
 
 .light {
-    background: white;
+  background: white;
 }
