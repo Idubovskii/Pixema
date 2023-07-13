@@ -88,6 +88,10 @@
     padding-top: 50px;
   }
 
+  @media (max-width: 360px) {
+    width: 300px;
+  }
+
   .background_description_block {
     display: flex;
     color: $secondary-color;
