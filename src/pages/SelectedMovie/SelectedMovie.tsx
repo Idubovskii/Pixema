@@ -9,7 +9,6 @@ import { AgeRating } from '~/components/AgeRating/AgeRating';
 import { Facts } from '~/components/Facts/Facts';
 import { Genres } from '~/components/Genres/Genres';
 import { Rating } from '~/components/Rating/Rating';
-import { Time } from '~/components/Time/Time';
 import { getRandomInt } from '~/shared/helpers/getRandomInt';
 import { FavoriteButton } from '~/shared/ui/buttons/FavoriteButton/FavoriteButton';
 import { Tabs } from '~/shared/ui/Tabs/Tabs';
@@ -199,7 +198,6 @@ export const SelectedMovie = () => {
 
             <div className={styles.movie_markers}>
               <Rating rating={movie.rating} />
-              <Time movieLength={movie.movieLength} />
               <AgeRating ageRating={movie.ageRating} />
             </div>
           </MediaQuery>
@@ -223,7 +221,6 @@ export const SelectedMovie = () => {
             <h2 className={styles.movie_altname}>{movie.alternativeName}</h2>
             <div className={styles.movie_markers}>
               <Rating rating={movie.rating} />
-              <Time movieLength={movie.movieLength} />
               <AgeRating ageRating={movie.ageRating} />
             </div>
           </MediaQuery>
